@@ -14,3 +14,5 @@ OEM Info Editor is a portable tool that allows you to edit/add OEM fields to Win
 ---
 * Tested on Windows 10 64 bit system, more on the way.
 * .NET Framework 4.5 required.
+---
+### [Download .EXE](https://github.com/thesourabh/OEM-Info-Editor/blob/master/OEM%20Info%20Editor/bin/Release/OEM%20Info%20Editor.exe?raw=true)
