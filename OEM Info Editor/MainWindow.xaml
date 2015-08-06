@@ -1,0 +1,40 @@
+﻿<Window x:Class="OEM_Info_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OEM_Info_Editor"
+        mc:Ignorable="d"
+        Title="OEM Info Editor" Height="280" Width="525" ResizeMode="NoResize" Icon="C:\Users\Sourabh\Downloads\oeminfoeditorlogo.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFDEDEDE" Offset="0.471"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,2,0">
+        <Label x:Name="lblManufacturer" Content="Manufacturer" HorizontalAlignment="Left" Margin="49,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.553,-0.769"/>
+        <Label x:Name="lblModel" Content="Model" HorizontalAlignment="Left" Margin="49,57,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblLogo" Content="Logo" HorizontalAlignment="Left" Margin="49,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSupportHours" Content="Support Hours" HorizontalAlignment="Left" Margin="49,108,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSupportPhone" Content="Support Phone" HorizontalAlignment="Left" Margin="48,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSupportUrl" Content="Support URL" HorizontalAlignment="Left" Margin="49,160,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtManufacturer" HorizontalAlignment="Left" Height="22" Margin="153,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="153,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtSupportHours" HorizontalAlignment="Left" Height="23" Margin="153,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtSupportPhone" HorizontalAlignment="Left" Height="23" Margin="153,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtSupportUrl" HorizontalAlignment="Left" Height="23" Margin="153,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="120" Margin="345,34,0,0" VerticalAlignment="Top" Width="120" Opacity="0.7">
+            <Image x:Name="imgLogo"/>
+
+        </Border>
+        <Button x:Name="btnBrowse" Content="Select File" HorizontalAlignment="Left" Margin="153,85,0,0" VerticalAlignment="Top" Width="123" Click="btnBrowse_Click" BorderBrush="#FF707070" ToolTip="Select a square BMP file"/>
+        <Label x:Name="lblLogoName" Content="" Margin="345,160,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <Button x:Name="btnClearLogo" Content="X" HorizontalAlignment="Left" Margin="281,85,0,0" VerticalAlignment="Top" Width="32" Click="btnClearLogo_Click" ToolTip="Clear Image"/>
+        <Button x:Name="btnReset" Content="Reset to Current" HorizontalAlignment="Left" Margin="206,200,0,0" VerticalAlignment="Top" Width="107" Click="btnReset_Click"/>
+        <Button x:Name="btnSave" Content="Update" HorizontalAlignment="Left" Margin="345,200,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" RenderTransformOrigin="0.492,0.55"/>
+        <Button x:Name="btnClearAll" Content="Clear" HorizontalAlignment="Left" Margin="153,200,0,0" VerticalAlignment="Top" Width="48" Click="btnClearAll_Click"/>
+
+
+    </Grid>
+</Window>
