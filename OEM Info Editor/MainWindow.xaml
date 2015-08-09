@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OEM_Info_Editor"
         mc:Ignorable="d"
-        Title="OEM Info Editor" Height="280" Width="525" ResizeMode="NoResize" Icon="C:\Users\Sourabh\Downloads\oeminfoeditorlogo.ico">
+        Title="OEM Info Editor" Height="280" Width="525" ResizeMode="NoResize" Icon="oeminfoeditorlogo.ico">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFDEDEDE" Offset="0.471"/>
@@ -24,7 +24,7 @@
         <TextBox x:Name="txtSupportHours" HorizontalAlignment="Left" Height="23" Margin="153,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <TextBox x:Name="txtSupportPhone" HorizontalAlignment="Left" Height="23" Margin="153,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <TextBox x:Name="txtSupportUrl" HorizontalAlignment="Left" Height="23" Margin="153,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="120" Margin="345,34,0,0" VerticalAlignment="Top" Width="120" Opacity="0.7">
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="120" Margin="345,34,0,0" VerticalAlignment="Top" Width="120">
             <Image x:Name="imgLogo"/>
 
         </Border>
