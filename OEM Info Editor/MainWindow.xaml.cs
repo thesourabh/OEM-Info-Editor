@@ -5,13 +5,14 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Wpf.Ui.Controls;
 
 namespace OEM_Info_Editor
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : FluentWindow
     {
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace OEM_Info_Editor
         /// </summary>
         private class OEMKey
         {
-            
+
             private static RegistryKey key;
             private OEMKey() { }
             public static RegistryKey GetKey()
@@ -64,6 +65,10 @@ namespace OEM_Info_Editor
         {
             InitializeComponent();
             GetCurrentInformation();
+            Loaded += (sender, args) =>
+            {
+                Wpf.Ui.Appearance.ApplicationThemeManager.Apply(Wpf.Ui.Appearance.ApplicationTheme.Dark, Wpf.Ui.Controls.WindowBackdropType.Mica, true, true);
+            };
         }
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
@@ -115,11 +120,14 @@ namespace OEM_Info_Editor
 
         private void SetLogoValues(string imageUrl)
         {
-            try {
+            try
+            {
                 imgLogo.Source = new BitmapImage(new Uri(imageUrl));
                 lblLogoName.Content = imageUrl.Substring(imageUrl.LastIndexOf('\\') + 1);
                 imgLogo.Tag = imageUrl;
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 imageUrl = "";
                 lblLogoName.Content = "";
                 imgLogo.Tag = "";

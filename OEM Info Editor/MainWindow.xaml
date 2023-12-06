@@ -1,40 +1,74 @@
-﻿<Window x:Class="OEM_Info_Editor.MainWindow"
+﻿<ui:FluentWindow x:Class="OEM_Info_Editor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OEM_Info_Editor"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="OEM Info Editor" Height="280" Width="525" ResizeMode="NoResize" Icon="oeminfoeditorlogo.ico">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FFDEDEDE" Offset="0.471"/>
-            <GradientStop Color="White" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
+    WindowBackdropType="Mica"
+    WindowCornerPreference="Round"
+    WindowStartupLocation="CenterScreen"
+                 ExtendsContentIntoTitleBar="True"
+        Title="OEM Info Editor" Height="407" Width="575" ResizeMode="NoResize" 
+    d:DataContext="{d:DesignInstance local:MainWindow,
+                                     IsDesignTimeCreatable=True}" 
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}" >
     <Grid Margin="0,0,2,0">
-        <Label x:Name="lblManufacturer" Content="Manufacturer" HorizontalAlignment="Left" Margin="49,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.553,-0.769"/>
-        <Label x:Name="lblModel" Content="Model" HorizontalAlignment="Left" Margin="49,57,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblLogo" Content="Logo" HorizontalAlignment="Left" Margin="49,82,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSupportHours" Content="Support Hours" HorizontalAlignment="Left" Margin="49,108,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSupportPhone" Content="Support Phone" HorizontalAlignment="Left" Margin="48,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSupportUrl" Content="Support URL" HorizontalAlignment="Left" Margin="49,160,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtManufacturer" HorizontalAlignment="Left" Height="22" Margin="153,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="153,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtSupportHours" HorizontalAlignment="Left" Height="23" Margin="153,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtSupportPhone" HorizontalAlignment="Left" Height="23" Margin="153,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtSupportUrl" HorizontalAlignment="Left" Height="23" Margin="153,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="120" Margin="345,34,0,0" VerticalAlignment="Top" Width="120">
-            <Image x:Name="imgLogo"/>
-
-        </Border>
-        <Button x:Name="btnBrowse" Content="Select File" HorizontalAlignment="Left" Margin="153,85,0,0" VerticalAlignment="Top" Width="123" Click="btnBrowse_Click" BorderBrush="#FF707070" ToolTip="Select a square BMP file"/>
-        <Label x:Name="lblLogoName" Content="" Margin="345,160,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <Button x:Name="btnClearLogo" Content="X" HorizontalAlignment="Left" Margin="281,85,0,0" VerticalAlignment="Top" Width="32" Click="btnClearLogo_Click" ToolTip="Clear Image"/>
-        <Button x:Name="btnReset" Content="Reset to Current" HorizontalAlignment="Left" Margin="206,200,0,0" VerticalAlignment="Top" Width="107" Click="btnReset_Click"/>
-        <Button x:Name="btnSave" Content="Update" HorizontalAlignment="Left" Margin="345,200,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" RenderTransformOrigin="0.492,0.55"/>
-        <Button x:Name="btnClearAll" Content="Clear" HorizontalAlignment="Left" Margin="153,200,0,0" VerticalAlignment="Top" Width="48" Click="btnClearAll_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="24"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="16"/>
+        </Grid.RowDefinitions>
 
 
+        <ui:TitleBar
+            Title="OEM Info Editor"
+            Grid.Row="0" Grid.ColumnSpan="3"
+            Icon="pack://application:,,,/Assets/oeminfoeditorlogo.png" />
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="32"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="404*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblManufacturer" Content="Manufacturer" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.553,-0.769"/>
+            <Label x:Name="lblModel" Content="Model" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblLogo" Content="Logo" HorizontalAlignment="Left" Margin="9,97,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblSupportHours" Content="Support Hours" HorizontalAlignment="Left" Margin="9,135,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblSupportPhone" Content="Support Phone" HorizontalAlignment="Left" Margin="9,175,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblSupportUrl" Content="Support URL" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
+            <ui:TextBox x:Name="txtManufacturer" Margin="10,10,145,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+            <ui:TextBox x:Name="txtModel" Margin="10,50,145,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+            <ui:TextBox x:Name="txtSupportHours" Margin="10,129,145,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+            <ui:TextBox x:Name="txtSupportPhone" Margin="10,169,145,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+            <ui:TextBox x:Name="txtSupportUrl" Margin="10,209,145,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+            <Border BorderBrush="#FF2D2D2D" BorderThickness="1" HorizontalAlignment="Right" Height="120" Margin="0,12,13,0" VerticalAlignment="Top" Width="120" Grid.Column="1">
+                <Image x:Name="imgLogo"/>
+            </Border>
+            <ui:Button x:Name="btnBrowse" Content="Select File" Margin="10,90,0,0" VerticalAlignment="Top" Width="123" Click="btnBrowse_Click"   ToolTip="Select a square BMP file" Grid.Column="1"/>
+            <Label x:Name="lblLogoName" Content="" Margin="0,141,13,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Grid.Column="1"/>
+            <ui:Button x:Name="btnClearLogo"   Margin="138,90,0,0" VerticalAlignment="Top" Width="48" Click="btnClearLogo_Click" ToolTip="Clear Image" Grid.Column="1" Height="32">
+                <ui:FontIcon Glyph="&#xE74D;" 
+  FontFamily="{DynamicResource SegoeFluentIcons}"
+  FontSize="12"
+  Foreground="White" />
+            </ui:Button>
+            <ui:Button x:Name="btnReset" Content="Reset to Current" Margin="0,0,128,0" VerticalAlignment="Bottom" Width="134" Click="btnReset_Click" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1"/>
+            <ui:Button x:Name="btnSave" Content="Update" Margin="0,0,3,0" VerticalAlignment="Bottom" Width="120" Click="btnSave_Click" RenderTransformOrigin="0.492,0.55" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1"/>
+            <ui:Button x:Name="btnClearAll" Content="Clear" Margin="0,0,267,0" VerticalAlignment="Bottom" Width="87" Click="btnClearAll_Click" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1"/>
+
+        </Grid>
     </Grid>
-</Window>
+</ui:FluentWindow>
