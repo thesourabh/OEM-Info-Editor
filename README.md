@@ -9,7 +9,8 @@ OEM Info Editor is a portable tool that allows you to edit/add OEM fields to Win
 * In case you'd like to change these things, but don't want to deal with the Registry yourself.
 * In case you are an OEM, and yet inexplicably don't know how to work the Windows Registry.
 ---
-![something cool](http://i.imgur.com/v4ss3E1.png)
+![image](https://github.com/rasyidf/OEM-Info-Editor/assets/28984914/477fbf79-9a9a-4438-840c-44e42a44ceda)
+
 
 ---
 * Tested on Windows 10 64 bit system, more on the way.
