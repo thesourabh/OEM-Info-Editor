@@ -4,6 +4,7 @@ build/
 
 [Dd]ebug*/
 obj/
+.vs/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult
@@ -34,5 +35,3 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.zip
 *.[Pp]ublish.xml
-
-!"OEM Info Editor"/[Bb]in/Release/"OEM Info Editor.exe"
